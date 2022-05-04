@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <title>JavaScript Forms</title>
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&amp;display=swap" />
+  <link rel="stylesheet" href="css/application.css" />
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>EventPlanner</h1>
+    </header>
+    <form data-component="form">
+      <fieldset>
+        <legend>Attendees</legend>
+        <label>
+          Name
+          <input type="text" name="name" data-component="name-input" />
+        </label>
+        <button type="button" data-component="add-button">Add</button>
+
+        <ul data-component="list">
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Details</legend>
+        <label>
+          Date
+          <input type="date" name="date" />
+        </label>
+        <hr />
+        <label>
+          Pizzas
+          <input type="number" value="0" name="pizzas" />
+        </label>
+      </fieldset>
+      <h3 data-component="error"></h3>
+      <br />
+      <input type="reset" />
+      <input type="submit" />
+    </form>
+    <ul data-component="party-list">
+      <!-- component-party-list -->
+    </ul>
+  </main>
+  <script type="module" src="javascript/application.js"></script>
+</body>
+
+</html>

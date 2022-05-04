@@ -1,0 +1,54 @@
+html {
+  font-family: Arial, sans-serif;
+}
+
+fieldset {
+  color: indigo;
+  border-style: solid;
+  border-color: darkslateblue;
+  border-width: 4px;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+hr {
+  border: 1px solid darkslateblue;
+}
+
+input {
+  padding: 0.25rem 0.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  border: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: indigo;
+  color: white;
+  border-radius: 0.25rem;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: darkslateblue;
+}
+
+[data-component="error"] {
+  color: orangered;
+}
+
+[data-component*="remove-"] {
+  margin-left: 1rem;
+}
