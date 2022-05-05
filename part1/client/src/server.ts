@@ -22,17 +22,30 @@ const renderPartyList = (list: IParty[]) =>
   list
     .map(
       (party) =>
-        `<li>date: ${party.date}, pizzas: ${
-          party.pizzas
-        }, guestlist: ${party.guestlist.join(", ")}</li>`
+        `
+        <li class="horizontal-flex horizontal-space">
+          <div class="vertical-flex">
+            <h3>Date</h3>
+            <h4>${party.date}</h4>
+          </div>
+          <div class="vertical-flex">
+            <h3>Pizzas</h3>
+            <h4>${party.pizzas}</h4>
+          </div>
+          <div class="vertical-flex">
+            <h3>Gueslist</h3>
+            <h4>${party.guestlist.join(", ")}</h4>
+          </div>
+        </li>
+        `
     )
     .join("\n");
 
 await server.serve(
   /*
-    Request
-  Reference: https://developer.mozilla.org/en-US/docs/Web/API/Request
-*/
+   Request
+   Reference: https://developer.mozilla.org/en-US/docs/Web/API/Request
+ */
   async (request: Request) => {
     /*
       URL

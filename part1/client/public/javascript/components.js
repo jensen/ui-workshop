@@ -90,17 +90,26 @@ export const PartyComponent = (key, props) => {
     return elements.parties[key];
   }
 
-  const item = document.createElement("li");
+  const template = document.querySelector(
+    "[data-component='party-item-template']"
+  );
+  const item = template.content.cloneNode(true);
+
+  const date = item.querySelector("[data-component-slot='party-item-date']");
+  const pizzas = item.querySelector(
+    "[data-component-slot='party-item-pizzas']"
+  );
+  const guestlist = item.querySelector(
+    "[data-component-slot='party-item-guestlist']"
+  );
+
+  date.textContent = props.date;
+  pizzas.textContent = props.pizzas;
+  guestlist.textContent = props.guestlist.join(", ");
 
   elements.parties[key] = item;
 
-  item.appendChild(
-    document.createTextNode(
-      `date: ${props.date}, pizzas: ${
-        props.pizzas
-      }, guestlist: ${props.guestlist.join(", ")}`
-    )
-  );
+  PartyListComponent().appendChild(item);
 
   return item;
 };

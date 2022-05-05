@@ -52,3 +52,31 @@ input[type="reset"]:hover {
 [data-component*="remove-"] {
   margin-left: 1rem;
 }
+
+[data-component="party-list"] li {
+  padding: 1rem;
+  border: 4px solid indigo;
+}
+
+[data-component="party-list"] li div {
+  margin-right: 2rem;
+}
+
+[data-component="party-list"] h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+[data-component="party-list"] h4 {
+  margin: 0;
+  color: gray;
+}
+
+.horizontal-flex {
+  display: flex;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}

@@ -47,6 +47,22 @@
       <input type="submit" />
     </form>
     <ul data-component="party-list">
+      <template data-component="party-item-template">
+        <li class="horizontal-flex">
+          <div class="vertical-flex">
+            <h3>Date</h3>
+            <h4 data-component-slot="party-item-date"></h4>
+          </div>
+          <div class="vertical-flex">
+            <h3>Pizzas</h3>
+            <h4 data-component-slot="party-item-pizzas"></h4>
+          </div>
+          <div class="vertical-flex">
+            <h3>Gueslist</h3>
+            <h4 data-component-slot="party-item-guestlist"></h4>
+          </div>
+        </li>
+      </template>
       <!-- component-party-list -->
     </ul>
   </main>
