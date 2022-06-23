@@ -10,14 +10,23 @@ await server.serve(
         ? path.resolve("./public/index.html")
         : path.resolve("./public" + url.pathname);
 
-    const html = await Deno.readTextFile(filename);
+    try {
+      const html = await Deno.readTextFile(filename);
 
-    return new Response(html, {
-      status: 200,
-      headers: {
-        "Content-Type": filename.endsWith(".css") ? "text/css" : "text/html",
-      },
-    });
+      return new Response(html, {
+        status: 200,
+        headers: {
+          "Content-Type": filename.endsWith(".css") ? "text/css" : "text/html",
+        },
+      });
+    } catch (error) {
+      return new Response("Not Found", {
+        status: 404,
+        headers: {
+          "Content-Type": "text/plain",
+        },
+      });
+    }
   },
   {
     port: 3000,
