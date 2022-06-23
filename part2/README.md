@@ -56,7 +56,7 @@ The React context API can reduce the number of props that we need to pass down t
 
 Components are responsible for returning React elements. A static site will always return the same tree each time we render it. Dynamic sites will cause mutations to the DOM based on the state change of state within the application.
 
-We should define categories of components that are associated with base responsibilities. This allows us to
+We should define categories of components that are associated with base responsibilities. This has an impact on the structure of a project and helps us limit the workload for any one component.
 
 - Shared-use UI controls
 - Single-use UI controls
