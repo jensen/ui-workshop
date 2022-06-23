@@ -1,6 +1,6 @@
 # UI Architecture
 
-## Part One 
+## Part One
 
 1. Early Years
 2. Requests
@@ -12,3 +12,11 @@
 8. Modifying The Document
 9. Transport
 10. The Platform
+
+## Part Two
+
+1. Complexity
+2. Components
+3. Managing State
+4. Side Effects
+5. Ecosystem
