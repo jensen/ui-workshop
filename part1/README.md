@@ -15,9 +15,9 @@
 
 Sharing information is intrinsic to human communities. As technology advances, we use those advances to improve our ability to communicate information. 
 
-In the early 90s, [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) saw an opportunity to combine computer networking and information communication. He released a [proposal](https://www.w3.org/History/1989/proposal.html) for a HyperCard inspired approach to linking documents. Hypertext (HTML) and the Hypertext Transfer Protocol (HTTP) provide the basis for the modern internet. In 1991 he posted to [alt.hypertext](https://www.w3.org/People/Berners-Lee/1991/08/art-6484.txt) an invite to visit the [first website](http://info.cern.ch/hypertext/WWW/TheProject.html) and use software he developed based on his proposal.
+In the early 90s, [Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) saw an opportunity to combine computer networking and information communication. He released a [proposal](https://www.w3.org/History/1989/proposal.html) for a HyperCard-inspired approach to linking documents. Hypertext (HTML) and the Hypertext Transfer Protocol (HTTP) provide the basis for the modern internet. In 1991 he posted to [alt.hypertext]([https://www.w3.](https://www.w3.org/People/Berners-Lee/1991/08/art-6484.txt)org/People/Berners-Lee/1991/08/art-6484.txt) an invite to visit the [first website](http://info.cern.ch/hypertext/WWW/TheProject.html) and use software he developed based on his proposal.
 
-In 1994, Netscape Communications Corporation was the first company to try and capitalize on the World Wide Web. Their Netscape Navigator browser grew in popularity very quickly; it was superior to their competitors. A documentary, [Project Code Rush](https://www.youtube.com/watch?v=4Q7FTjhvZ7Y) that describes the end of Netscape during their effort to release their browser code as open-source software is worth watching.
+In 1994, Netscape Communications Corporation was the first company to try and capitalize on the World Wide Web. Their Netscape Navigator browser grew in popularity quickly; it was superior to their competitors. A documentary, [Project Code Rush](https://www.youtube.com/watch?v=4Q7FTjhvZ7Y), describes the end of Netscape during their effort to release its browser code as open-source software. It is worth watching.
 
 The World Wide Web spread into people's homes, and at this point, anyone with an internet connection was likely using Netscape Navigator to browse documents described as HTML. A specification for HTML or HTTP would be incomplete when Netscape added them to their browser.
 
@@ -29,11 +29,11 @@ Users choose a neighbourhood based on the topic of their website. When they sign
 
 ## 2. Requests
 
-When we start a webserver, it opens a port and listens for TCP connections. A basic web server only performs work when a user agent makes a request.
+When we start a web server, it opens a port and listens for TCP connections. A basic web server only performs work when a user agent makes a request.
 
 > Example of a [hard-coded](./webservers/src/hardcoded.ts) web server with Deno.
 
-This type of web server requires a restart whenever the contents of the document change. We can alter our webserver code to read files and serve them as documents when we find them.
+This type of web server requires a restart whenever the contents of the document change. We can alter our web server code to read files and serve them as documents when we find them.
 
 > Example of a [static](./webservers/src/static.ts) web server with Deno.
 
@@ -41,37 +41,37 @@ After visiting a URL, the server returns a document, and the browser parses the 
 
 > Example showing linked requests in the Network tab.
 
-Apache and NGINX are the most common production web servers available today. These servers do an excellent job of serving static files. Another option is deploying static assets to a CDN so that users download the files from servers that are closer to them. With these approaches available, Rails does not serve static files in production by default.
+Apache and NGINX are the most common production web servers available today. These servers do an excellent job of serving static files. Another option is deploying static assets to a CDN so that users download the files from servers closer to them. With these approaches available, Rails does not serve static files in production by default.
 
 ## 3. Managing State
 
-The ability to request documents and view the latest version on demand proves valuable. When we only need to provide more dynamic information, we can turn to dynamic web servers. A server generates a dynamic web page by constructing the content when a user makes a request.
+The ability to request documents and view the latest version on demand proves valuable. We can turn to dynamic web servers when we only need to provide more dynamic information. A server generates a dynamic web page by constructing the content when a user makes a request.
 
 > Example of a [dynamic](./webservers/src/dynamic.ts) web server in Deno.
 
-When we provide search parameters as a part of the URL, the server can return relevant data. It can also create links to other paths within the site using search parameters that allow us to pass state as part of the URL.
+The server can return relevant data when we provide search parameters as part of the URL. It can also create links to other paths within the site using search parameters that allow us to pass state as part of the URL.
 
 Lou Montulli invented the cookie as a Netscape employee in 1994. Before browser cookies, it was tough to store user state between requests. A server creates a cookie in response to a request from the browser. The browser holds the cookie and sends it with every following request to that site. The server can replace the cookie when values need to be updated.
 
 ## 4. Mutation
 
-We introduce most of the complexity in web development by allowing users to mutate data. The most popular sites of our time have ways for users to contribute content. Unknown to most of them, they submit a form with side effects by using the POST method with their content forming the body data of the request.
+We introduce most of the complexity in web development by allowing users to mutate data. The most popular sites of our time have ways for users to contribute content. Unknown to most, they submit a form with side effects by using the POST method with their content forming the body data of the request.
 
-The [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_toc.html) specification contains the `<form>` element. 
+The [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_toc.html) specification contains the `<form>` element.
 
 > Example of a [form with submit and reset](./webservers/src/dynamic.ts). Show redirect after post.
 
-Even though the [HTTP 1.1](https://www.rfc-editor.org/rfc/rfc7231) specification includes new methods for updating or destroying existing resources, the `<form>` element does not support `PUT` or `DELETE` as a method attribute. Rails form helpers include a hidden `<input>` named “_method” that tells the server how the router should handle the `POST` request.
+Even though the [HTTP 1.1](https://www.rfc-editor.org/rfc/rfc7231) specification includes new methods for updating or destroying existing resources, the <form> element does not support PUT or DELETE as a method attribute. Rails form helpers include a hidden <input> named “_method” that tells the server how the router should handle the POST request.
 
 ## 5. User Experience
 
 Browser vendors' rapid adoption of [HTML 2.0](https://www.w3.org/MarkUp/html-spec/html-spec_toc.html) features quickly turned the WWW from a text-based platform to one that is capable of delivering a rich-media experience.
 
-One of the early challenges for developers was the need to create more complex layouts without any styling tools. In the period between HTML 2.0 and [HTML 3.2](https://www.w3.org/TR/2018/SPSD-html32-20180315/) with [CSS](https://www.w3.org/TR/CSS1/), a technique of slicing up images and displaying them as the background of table cells is considered normal.
+One of the early challenges for developers was creating more complex layouts without any styling tools. In the period between HTML 2.0 and [HTML 3.2](https://www.w3.org/TR/2018/SPSD-html32-20180315/) with [CSS](https://www.w3.org/TR/CSS1/), a technique of slicing up images and displaying them as the background of table cells is considered normal.
 
 > Example of a [table-based layout](https://neocities.karl.sh/SiliconValley/1000/layout.html) on neocities.
 
-The addition of Cascading Style Sheets means that designers can create the types of experiences that we see today. A new challenge for developers is supporting multiple popular browser vendors that don’t all implement the CSS to the exact specifications.
+Adding Cascading Style Sheets means that designers can create the types of experiences we see today. A new challenge for developers is supporting multiple popular browser vendors that don’t all implement the CSS to the exact specifications.
 
 Adding more scripts, styles and media to a site takes its toll on an early 90s internet connection. A web server can implement a good [caching strategy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control), which instructs the browser on which content it can and for how long to cache it.
 
