@@ -31,11 +31,11 @@ Users choose a neighbourhood based on the topic of their website. When they sign
 
 When we start a web server, it opens a port and listens for TCP connections. A basic web server only performs work when a user agent makes a request.
 
-> Example of a [hard-coded](./webservers/src/hardcoded.ts) web server with Deno.
+> Example of a hard-coded web servers with [express](./webservers/express/src/hardcoded.js) and [Deno](./webservers/deno/hardcoded.ts).
 
 This type of web server requires a restart whenever the contents of the document change. We can alter our web server code to read files and serve them as documents when we find them.
 
-> Example of a [static](./webservers/src/static.ts) web server with Deno.
+> Example of a static web servers with [express](./webservers/express/src/static.js) and [Deno](./webservers/deno/static.ts).
 
 After visiting a URL, the server returns a document, and the browser parses the document and makes further requests for linked resources. If a user clicks on a link or submits a form, then the browser makes a request to a server.
 
@@ -47,7 +47,7 @@ Apache and NGINX are the most common production web servers available today. The
 
 The ability to request documents and view the latest version on demand proves valuable. We can turn to dynamic web servers when we only need to provide more dynamic information. A server generates a dynamic web page by constructing the content when a user makes a request.
 
-> Example of a [dynamic](./webservers/src/dynamic.ts) web server in Deno.
+> Example of a dynamic web servers with [express](./webservers/express/src/dynamic.js) and [Deno](./webservers/deno/dynamic.ts).
 
 The server can return relevant data when we provide search parameters as part of the URL. It can also create links to other paths within the site using search parameters that allow us to pass state as part of the URL.
 
