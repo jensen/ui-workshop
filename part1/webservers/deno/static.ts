@@ -7,8 +7,8 @@ await server.serve(
 
     const filename =
       url.pathname === "/"
-        ? path.resolve("./public/index.html")
-        : path.resolve("./public" + url.pathname);
+        ? path.resolve("../public/index.html")
+        : path.resolve("../public" + url.pathname);
 
     try {
       const html = await Deno.readTextFile(filename);
